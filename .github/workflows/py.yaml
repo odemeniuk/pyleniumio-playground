@@ -14,11 +14,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python 3.8
+    - name: install Python 3.8
       uses: actions/setup-python@v1
       with:
         python-version: 3.8
-    - name: Install dependencies
+    - name: build project dependencies
       run: |
         python -m pip install --upgrade pip
         python3 --version
@@ -28,12 +28,12 @@ jobs:
         source $VENV_HOME_DIR/bin/activate
         export PYTHONPATH="$PYTHONPATH:."
         python -c "import sys;print(sys.path)"
-    - name: Build the stack
+    - name: spining up selenuim-grid containers
       run: docker-compose up -d
-    - name: Sleep
+    - name: timeout
       run: |
         sleep 20
-    - name: Pytest
+    - name: test
       run: |
         docker ps
         ls -ll

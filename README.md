@@ -1,3 +1,3 @@
 # pyleniumio-playground
-boilerplate project with examples how to use pyleniumio framework
-official documentatio can be found here https://elsnoman.gitbook.io/pylenium/
+Pyleniumio framework template project with enabled CI on GitHub Actions
+Official documentation can be found https://elsnoman.gitbook.io/pylenium/
