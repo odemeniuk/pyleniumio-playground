@@ -37,4 +37,4 @@ jobs:
       run: |
         docker ps
         ls -ll
-        python -m pytest --remote_url="http://localhost:4444/wd/hub"
+        pipenv run pytest tests --remote_url="http://localhost:4444/wd/hub"
