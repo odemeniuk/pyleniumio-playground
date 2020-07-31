@@ -1,0 +1,21 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+pytest-sugar = "*"
+pytest-cov = "*"
+importlib-metadata = "*"
+logger = "*"
+allure-pytest = "*"
+python-dotenv = "*"
+pyleniumio = "*"
+pytest-reportportal = "*"
+pytest-html = "*"
+pylint = "*"
+
+[requires]
+python_version = "3.8"

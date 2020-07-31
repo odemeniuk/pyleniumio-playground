@@ -1,0 +1,33 @@
+{
+  "driver": {
+    "browser": "chrome",
+    "remote_url": "http://localhost:4444/wd/hub",
+    "wait_time": 10,
+    "page_load_wait_time": 30,
+    "options": ["incognito"],
+    "_options": ["disable-dev-shm-usage", "headless", "no-sandbox", "disable-gpu"],
+    "capabilities": {},
+    "version": "latest",
+    "experimental_options": [
+      {
+        "useAutomationExtension": false
+      },
+      {
+        "excludeSwitches": [
+          "enable-automation"
+        ]
+      }
+    ],
+    "extension_paths": []
+  },
+  "logging": {
+    "screenshots_on": true,
+    "pylog_level": "info"
+  },
+  "viewport": {
+    "maximize": true,
+    "width": 1440,
+    "height": 900,
+    "orientation": "portrait"
+  }
+}
