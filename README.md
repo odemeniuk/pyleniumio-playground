@@ -1,4 +1,6 @@
 # pyleniumio-playground
+![pyleniumio-playground](https://github.com/odemeniuk/pyleniumio-playground/workflows/pyleniumio-playground/badge.svg)
+
 This is a Pyleniumio template project to start creating Test Automation from scratch with enabled CI on GitHub Actions.
 
 Pyleniumio is a wrapper of Selenium written in Python and pytest.
