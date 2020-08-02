@@ -8,3 +8,4 @@
 /tests/.env
 __pycache__
 test_results
+allure-results
