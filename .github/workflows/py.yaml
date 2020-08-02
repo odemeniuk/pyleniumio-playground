@@ -50,7 +50,6 @@ jobs:
       run: |
         ls -l
         allure generate -c ./allure-results -o ./allure-report
-        allure serve
     - uses: actions/upload-artifact@v2
       with:
         name: allure-report
