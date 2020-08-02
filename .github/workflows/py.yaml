@@ -39,8 +39,18 @@ jobs:
     - name: Timeout
       run: |
         sleep 20
+
     - name: Test
       run: |
         docker ps
         ls -ll
-        pipenv run pytest -n=4 tests --remote_url="http://localhost:4444/wd/hub"
+        pipenv run pytest -n=4 tests --remote_url="http://localhost:4444/wd/hub" --alluredir=./allure-results
+
+    - name: Create Report
+      run: |
+        ls -l
+        allure generate -c ./allure-results -o ./allure-report
+    - uses: actions/upload-artifact@v2
+      with:
+        name: allure-report
+        path: ./allure-report
