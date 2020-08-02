@@ -13,7 +13,8 @@ Official documentation can be found https://elsnoman.gitbook.io/pylenium/
 
 Requirements:
 python 3.8,
-docker  
+docker
+allure service 
 
 Instruction to start tests in local environment using Selenium Grid
 1. git clone https://github.com/odemeniuk/pyleniumio-playground.git
@@ -21,6 +22,7 @@ Instruction to start tests in local environment using Selenium Grid
 3. pipenv install
 4. pipenv shell
 5. docker-compose up -d
-6. pipenv run pytest tests 
-7. docker-compose down
+6. pipenv run pytest tests --alluredir allure-results
+7. allure serve
+8. docker-compose down
 
