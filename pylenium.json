@@ -21,8 +21,8 @@
     "extension_paths": []
   },
   "logging": {
-    "screenshots_on": true,
-    "pylog_level": "info"
+    "pylog_level": "info",
+    "screenshots_on": false
   },
   "viewport": {
     "maximize": true,

@@ -12,10 +12,10 @@ importlib-metadata = "*"
 logger = "*"
 allure-pytest = "*"
 python-dotenv = "*"
-pyleniumio = "*"
 pytest-reportportal = "*"
 pytest-html = "*"
 pylint = "*"
+pyleniumio = "*"
 
 [requires]
 python_version = "3.8"
