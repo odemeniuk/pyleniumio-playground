@@ -33,7 +33,7 @@ jobs:
 
     - name: Start Selenoid
       uses: Xotabu4/selenoid-github-action@v1
-    - uses: actions/checkout@v
+    - uses: actions/checkout@v1
 
     - name: Test
       run: |
