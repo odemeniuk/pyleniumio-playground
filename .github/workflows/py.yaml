@@ -33,7 +33,7 @@ jobs:
     - name: Run selenuim-grid container
       services:
         selenium:
-          image: selenium/standalone-chrome
+          uses: selenium/standalone-chrome
 
     - name: Test
       run: |
@@ -44,7 +44,7 @@ jobs:
     - name: Create Report
       services:
         allure:
-          image: frankescobar/allure-docker-service
+          uses: frankescobar/allure-docker-service
       run: |
         ls -l
         allure generate -c ./allure-results -o ./allure-report
