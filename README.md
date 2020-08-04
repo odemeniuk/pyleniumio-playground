@@ -23,7 +23,7 @@ Instruction to start tests in local environment using Selenium Grid
 3. pipenv install
 4. pipenv shell
 5. docker-compose up -d
-6. pipenv run pytest tests --alluredir allure-results
+6. pipenv run pytest tests --alluredir=./allure-results
 7. allure serve
 8. docker-compose down
 
