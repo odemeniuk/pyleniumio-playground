@@ -23,17 +23,11 @@ jobs:
         python -m pip install --upgrade pip
         python3 --version
         pip install pipenv
-        pipenv install
-        export VENV_HOME_DIR=$(pipenv --venv)
-        source $VENV_HOME_DIR/bin/activate
-        export PYTHONPATH="$PYTHONPATH:."
-        python -c "import sys;print(sys.path)"
+        pipenv install --dev
         allure --version
 
     - name: Run selenuim-grid container
-      services:
-        selenium:
-          uses: selenium/standalone-chrome
+      uses: selenium/standalone-chrome
 
     - name: Test
       run: |
@@ -42,9 +36,7 @@ jobs:
       continue-on-error: true
 
     - name: Create Report
-      services:
-        allure:
-          uses: frankescobar/allure-docker-service
+      uses: frankescobar/allure-docker-service
       run: |
         ls -l
         allure generate -c ./allure-results -o ./allure-report
