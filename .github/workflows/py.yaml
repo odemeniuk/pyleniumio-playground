@@ -26,7 +26,6 @@ jobs:
         python3 --version
         pip install pipenv
         pipenv install --dev
-        allure --version
 
     - name: Start selenoid
       uses: Xotabu4/selenoid-github-action@v1
