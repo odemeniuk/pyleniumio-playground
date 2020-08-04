@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 echo "-> Installing dependencies"
-pipenv install
+pipenv install --dev
 #pipenv shell
 
 echo "-> Removing old Allure results"
