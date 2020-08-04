@@ -3,9 +3,13 @@
     "browser": "chrome",
     "remote_url": "http://localhost:4444/wd/hub",
     "wait_time": 10,
-    "page_load_wait_time": 30,
-    "options": ["incognito"],
-    "_options": ["disable-dev-shm-usage", "headless", "no-sandbox", "disable-gpu"],
+    "page_load_wait_time": 10,
+    "_options": ["incognito"],
+    "options": [
+      "headless", "start-maximized",
+      "window-size=1920,1080","disable-dev-shm-usage",
+      "no-sandbox", "disable-gpu"],
+
     "capabilities": {},
     "version": "latest",
     "experimental_options": [

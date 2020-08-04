@@ -12,6 +12,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container: frankescobar/allure-docker-service
     steps:
     - uses: actions/checkout@v2
     - name: Install Python 3.8
@@ -28,10 +29,10 @@ jobs:
         source $VENV_HOME_DIR/bin/activate
         export PYTHONPATH="$PYTHONPATH:."
         python -c "import sys;print(sys.path)"
-        curl -o allure-2.7.0.tgz -Ls https://dl.bintray.com/qameta/generic/io/qameta/allure/allure/2.7.0/allure-2.7.0.tgz
-        sudo tar -zxvf allure-2.7.0.tgz -C /opt/
-        sudo ln -s /opt/allure-2.7.0/bin/allure /usr/bin/allure
-        rm -rf allure-2.7.0.tgz
+#        curl -o allure-2.7.0.tgz -Ls https://dl.bintray.com/qameta/generic/io/qameta/allure/allure/2.7.0/allure-2.7.0.tgz
+#        sudo tar -zxvf allure-2.7.0.tgz -C /opt/
+#        sudo ln -s /opt/allure-2.7.0/bin/allure /usr/bin/allure
+#        rm -rf allure-2.7.0.tgz
         allure --version
 
     - name: Run selenuim-grid container
@@ -45,6 +46,7 @@ jobs:
         docker ps
         ls -ll
         pipenv run pytest -n=4 tests --remote_url="http://localhost:4444/wd/hub" --alluredir=./allure-results
+      continue-on-error: true
 
     - name: Create Report
       run: |
