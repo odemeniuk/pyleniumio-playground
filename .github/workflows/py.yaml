@@ -28,8 +28,9 @@ jobs:
         pipenv install --dev
         allure --version
 
-    - name: Run selenuim-grid container
-      uses: selenium/standalone-chrome
+    - name: Start selenoid
+      uses: Xotabu4/selenoid-github-action@v1
+    - uses: actions/checkout@v2
 
     - name: Test
       run: |
@@ -37,10 +38,7 @@ jobs:
         pipenv run pytest -n=4 tests --alluredir=./allure-results
       continue-on-error: true
 
-    - name: Start Allure service
-      uses: frankescobar/allure-docker-service
-
-    - name: Create Report
+    - name: Create Allure Report
       run: |
         ls -l
         allure generate -c ./allure-results -o ./allure-report
